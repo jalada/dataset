@@ -1,5 +1,5 @@
 /**
-* Miso.Dataset - v0.4.1 - 6/24/2014
+* Miso.Dataset - v0.4.1 - 7/14/2014
 * http://github.com/misoproject/dataset
 * Copyright (c) 2014 Alex Graul, Irene Ros;
 * Dual Licensed: MIT, GPL
@@ -6540,7 +6540,7 @@ if (!JSON) {
 }(this, _));
 
 /**
-* Miso.Dataset - v0.4.1 - 6/24/2014
+* Miso.Dataset - v0.4.1 - 7/14/2014
 * http://github.com/misoproject/dataset
 * Copyright (c) 2014 Alex Graul, Irene Ros;
 * Dual Licensed: MIT, GPL
@@ -8004,7 +8004,7 @@ Version 0.0.1.2
 
       this.each(function(row, rowIndex) {
         if (filter(row)) {
-          rowsToRemove.push(row[this.idAttribute]);
+          rowsToRemove.unshift(row[this.idAttribute]);
           deltas.push( { old: row } );
         }
       });

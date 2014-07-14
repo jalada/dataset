@@ -56,6 +56,17 @@
     equals(ds.length, 2);
   });
 
+  test("removing two rows with a function", function() {
+    var ds = Util.baseSample();
+    ds.add({one: 4, two: 7, three: 10});
+    var firstRowId = ds._rowIdByPosition[1];
+    var secondRowId = ds._rowIdByPosition[3];
+    ds.remove(function(row) { return (row.one === 2 || row.one === 4); });
+    
+    ok( _.isEqual(ds.column("one").data, [1,3]) );
+    ok( ds._rowIdByPosition[0] !== firstRowId );
+    equals(ds.length, 2);
+  }); 
 
   test("removing a row with an id", function() {
     var ds = Util.baseSample();

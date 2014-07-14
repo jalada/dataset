@@ -531,7 +531,7 @@ Version 0.0.1.2
 
       this.each(function(row, rowIndex) {
         if (filter(row)) {
-          rowsToRemove.push(row[this.idAttribute]);
+          rowsToRemove.unshift(row[this.idAttribute]);
           deltas.push( { old: row } );
         }
       });
